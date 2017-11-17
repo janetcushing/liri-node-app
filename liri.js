@@ -1,51 +1,93 @@
-//twitter
-var Twitter = require('twitter');
-
-var client = new Twitter({
- consumer_key: '',
- consumer_secret: '',
- access_token_key: '',
- access_token_secret: ''
-});
-
-var params = {screen_name: 'nodejs'};
-client.get('statuses/user_timeline', params, function(error, tweets, response) {
- if (!error) {
-   console.log(tweets);
- }
-});
 
 
+// function getcredentials() {
+// var myKeyObj = require("./keys.js");
+// console.log("myKeyObj " + JSON.stringify(myKeyObj));
+// }
 
-// spotify
-// search: function({ type: 'artist OR album OR track', query: 'My search query', limit: 20 }, callback);
+function getMyTweets() {
 
-var Spotify = require('node-spotify-api');
+  var myKeyObj = require("./keys.js");
+  var Twitter = require('twitter');
+  console.log("myKeyObj " + JSON.stringify(myKeyObj));
 
-var spotify = new Spotify({
- id: <your spotify client id>,
- secret: <your spotify client secret>
-});
+  var client = new Twitter({
+    consumer_key: myKeyObj.keyObj.twitterKeys.consumer_key,
+    consumer_secret: myKeyObj.keyObj.twitterKeys.consumer_secret,
+    access_token_key: myKeyObj.keyObj.twitterKeys.access_token_key,
+    access_token_secret: myKeyObj.keyObj.twitterKeys.access_token_secret
+  });
 
-spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
- if (err) {
-   return console.log('Error occurred: ' + err);
- }
+  var params = {
+    screen_name: 'cushcushj'
+  };
 
-console.log(data); 
-});
+  client.get('statuses/user_timeline', params, function (error, tweets, response) {
+    if (!error) {
+      //  console.log(JSON.stringify(tweets));
+      console.log("how many tweets " + Object.keys(tweets).length);
+
+      for (var i = 0;
+        (i < Object.keys(tweets).length && i < 20); i++) {
+        console.log("----------------------------");
+        console.log(tweets[i].created_at);
+        console.log(tweets[i].text);
+        console.log("----------------------------");
+        //  console.log(tweets[index].name);
+      }
+    } else {
+      console.log("error happened: " + error);
+    }
+  });
+}
 
 
-// imdb
+function getMySong() {
 
-var request = require('request');
-request('http://www.google.com', function (error, response, body) {
-  console.log('error:', error); // Print the error if one occurred
-  console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-  console.log('body:', body); // Print the HTML for the Google homepage.
-});
+  var mySpotifyKeyObj = require("./keys.js");
+  var Spotify = require('node-spotify-api');
+  // console.log("mySpotifyKeyObj " + JSON.stringify(mySpotifyKeyObj));
 
+  var spotify = new Spotify({
+    id: mySpotifyKeyObj.keyObj.spotifyKeys.id,
+    secret: mySpotifyKeyObj.keyObj.spotifyKeys.secret
+  });
 
-// send request to: http://www.omdbapi.com/?apikey=[yourkey]&
+  spotify.search({
+    type: 'track',
+    query: 'The Sign'
+  }, function (err, data) {
+    if (err) {
+      return console.log('Error occurred: ' + err);
+    }
+    else{
+      console.log(JSON.stringify(data));
+      return data;
+    }
 
-// api key:  ab4f91c6
+  
+  });
+
+}
+
+//----------------//
+// main process
+//----------------//
+console.log(process.argv);
+var appRequest = process.argv[2];
+
+if (appRequest === "my-tweets") {
+  console.log("my-tweets requested");
+  // fetch the last 20 tweets and console log them
+  getMyTweets();
+
+} else if (appRequest === "spotify-this-song") {
+  console.log("spotify requested");
+  getMySong();
+
+} else if (appRequest === "movie-this") {
+  console.log("movie-this requested");
+
+} else {
+  console.log("unrecognized app requested");
+}
