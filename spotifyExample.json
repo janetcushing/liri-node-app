@@ -1,0 +1,162 @@
+{
+    "tracks": {
+        "href": "https://api.spotify.com/v1/search?query=Dancing+in+the+Moonlight&type=track&offset=0&limit=1",
+        "items": [{
+            "album": {
+                "album_type": "album",
+                "artists": [{
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/5FHwr1FymaS5kutIEK6e2y"
+                    },
+                    "href": "https://api.spotify.com/v1/artists/5FHwr1FymaS5kutIEK6e2y",
+                    "id": "5FHwr1FymaS5kutIEK6e2y",
+                    "name": "King Harvest",
+                    "type": "artist",
+                    "uri": "spotify:artist:5FHwr1FymaS5kutIEK6e2y"
+                }],
+                "available_markets": ["AR", "AU", "BO", "BR", "CA", "CL", "CO", "CR", "CY", "DO", "EC", "GB", "GT", "HK", "HN", "ID", "IE", "JP", "MX", "MY", "NI", "NZ", "PA", "PE", "PH", "PY", "SG", "SV", "TH", "TR", "TW", "US", "UY", "VN"],
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/album/2W5SVDEBlGqHYqt5sa9PnA"
+                },
+                "href": "https://api.spotify.com/v1/albums/2W5SVDEBlGqHYqt5sa9PnA",
+                "id": "2W5SVDEBlGqHYqt5sa9PnA",
+                "images": [{
+                    "height": 640,
+                    "url": "https://i.scdn.co/image/db10fb30eaacb0599d50dafae2cfc54927058ac7",
+                    "width": 640
+                }, {
+                    "height": 300,
+                    "url": "https://i.scdn.co/image/b71ecd2d6bfdd8d7f562396f39d9b4598f081769",
+                    "width": 300
+                }, {
+                    "height": 64,
+                    "url": "https://i.scdn.co/image/71faa36f8f729dd232c86a6d009f65253a04e764",
+                    "width": 64
+                }],
+                "name": "Dancing in the Moonlight",
+                "type": "album",
+                "uri": "spotify:album:2W5SVDEBlGqHYqt5sa9PnA"
+            },
+            "artists": [{
+                "external_urls": {
+                    "spotify": "https://open.spotify.com/artist/5FHwr1FymaS5kutIEK6e2y"
+                },
+                "href": "https://api.spotify.com/v1/artists/5FHwr1FymaS5kutIEK6e2y",
+                "id": "5FHwr1FymaS5kutIEK6e2y",
+                "name": "King Harvest",
+                "type": "artist",
+                "uri": "spotify:artist:5FHwr1FymaS5kutIEK6e2y"
+            }],
+            "available_markets": ["AR", "AU", "BO", "BR", "CA", "CL", "CO", "CR", "CY", "DO", "EC", "GB", "GT", "HK", "HN", "ID", "IE", "JP", "MX", "MY", "NI", "NZ", "PA", "PE", "PH", "PY", "SG", "SV", "TH", "TR", "TW", "US", "UY", "VN"],
+            "disc_number": 1,
+            "duration_ms": 181133,
+            "explicit": false,
+            "external_ids": {
+                "isrc": "USY4W0610011"
+            },
+            "external_urls": {
+                "spotify": "https://open.spotify.com/track/0q21FNwES2bbtcduB6kjEU"
+            },
+            "href": "https://api.spotify.com/v1/tracks/0q21FNwES2bbtcduB6kjEU",
+            "id": "0q21FNwES2bbtcduB6kjEU",
+            "name": "Dancing in the Moonlight",
+            "popularity": 60,
+            "preview_url": "https://p.scdn.co/mp3-preview/946e8fd229c36c44b597d33aa4c33ac0dd0d368a?cid=6323332f18a543ddb10c6353697c79a4",
+            "track_number": 10,
+            "type": "track",
+            "uri": "spotify:track:0q21FNwES2bbtcduB6kjEU"
+        }],
+        "limit": 1,
+        "next": "https://api.spotify.com/v1/search?query=Dancing+i
+        n + the + Moonlight & type = track & offset = 1 & limit = 1 ","
+        offset ":0,"
+        previous ":null,"
+        total ":869}}
+
+        {
+            "artists": {
+                "href": "https://api.spotify.com/v1/search?query=Ace+of+Base&type=artist&offset=0&limit=20",
+                "items": [{
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/5ksRONqssB7BR161NTtJAm"
+                    },
+                    "followers": {
+                        "href": null,
+                        "total": 150764
+                    },
+                    "genres": ["bubblegum dance", "dance pop", "eurodance", "europop", "hip house", "new wave pop", "pop rock", "swedish pop"],
+                    "href": "https://api.spotify.com/v1/artists/5ksRONqssB7BR161NTtJAm",
+                    "id": "5ksRONqssB7BR161NTtJAm",
+                    "images": [{
+                        "height": 1000,
+                        "url": "https://i.scdn.co/image/df9a1dd7f15d98cdbef3ee8c44adae7dec4142d6",
+                        "width": 1000
+                    }, {
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/df9832bacbaeb43077530fa37a8178cea85cb956",
+                        "width": 640
+                    }, {
+                        "height": 200,
+                        "url": "https://i.scdn.co/image/1ac301a42a23cb9e941fe8d08cccf8ddd5744fec",
+                        "width": 200
+                    }, {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/2b7099de969353f0948777bd2bcc96a2a458a2b6",
+                        "width": 64
+                    }],
+                    "name": "Ace of Base",
+                    "popularity": 67,
+                    "type": "artist",
+                    "uri": "spotify:artist:5ksRONqssB7BR161NTtJAm"
+                }, {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/7kXQy9NWHZx6AYBN0Uzi3a"
+                    },
+                    "followers": {
+                        "href": null,
+                        "total": 14
+                    },
+                    "genres": [],
+                    "href": "https://api.spotify.com/v1/artists/7kXQy9NWHZx6AYBN0Uzi3a",
+                    "id": "7kXQy9NWHZx6AYBN0Uzi3a",
+                    "images": [],
+                    "name": "Rico Bernasconi & Ace Of Base",
+                    "popularity": 3,
+                    "type": "artist",
+                    "uri": "spotify:artist:7kXQy9NWHZx6AYBN0Uzi3a"
+                }, {
+                    "external_urls": {
+                        "spotify": "https://open.spotify.com/artist/5AaeSySGHvppZl7azXOrLl"
+                    },
+                    "followers": {
+                        "href": null,
+                        "total": 61
+                    },
+                    "genres": [],
+                    "href": "https://api.spotify.com/v1/artists/5AaeSySGHvppZl7azXOrLl",
+                    "id": "5AaeSySGHvppZl7azXOrLl",
+                    "images": [{
+                        "height": 640,
+                        "url": "https://i.scdn.co/image/0e83ecd751f3c7decd747af97a1bdabcf897154d",
+                        "width": 640
+                    }, {
+                        "height": 300,
+                        "url": "https://i.scdn.co/image/4d9dfd37f3c57c64fe17f870428943567e9f5c6b",
+                        "width": 300
+                    }, {
+                        "height": 64,
+                        "url": "https://i.scdn.co/image/4aa59290c95821f3abc522f350a1baebedf5d0b1",
+                        "width": 64
+                    }],
+                    "name": "Ace Of Base Tribute",
+                    "popularity": 4,
+                    "type": "artist",
+                    "uri": "spotify:artist:5AaeSySGHvppZl7azXOrLl"
+                }],
+                "limit": 20,
+                "next": null,
+                "offset": 0,
+                "previous": null,
+                "total": 3
+            }
+        }
