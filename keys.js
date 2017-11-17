@@ -1,4 +1,4 @@
-JavaScript
+// keys.js
 console.log('this is loaded');
 
 var twitterKeys = {
@@ -8,7 +8,15 @@ var twitterKeys = {
   access_token_secret: 'FTafTT892CAA8Nw9kLjRme0zofiMnv1G5ODryzKOHzvrY',
 }
 
-module.exports = twitterKeys;
+var spotifyKeys = {
+  id: '6323332f18a543ddb10c6353697c79a4',
+  secret: 'f3af806fd33d46b58d8f60ef4713591f'
+}
+
+exports.keyObj = {
+  twitterKeys: twitterKeys,
+  spotifyKeys: spotifyKeys
+};
 
 // Consumer Key (API Key)	KruKMtLkNDHVAHZl3obkMkIup
 // Consumer Secret (API Secret)	ErDYXPdJx9rzCXPmobCoMHBFP36a0iq0tTbwnMMMSl1iU8KXr2
@@ -34,9 +42,6 @@ module.exports = twitterKeys;
 // Client Secret
 // f3af806fd33d46b58d8f60ef4713591f
 
-var spotifyKeys = {
-    id: '6323332f18a543ddb10c6353697c79a4',
-    secret: 'f3af806fd33d46b58d8f60ef4713591f',
-  }
-  
-  module.exports = spotifyKeys;
+
+
+// module.exports = spotifyKeys;
