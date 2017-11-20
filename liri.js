@@ -242,6 +242,8 @@ const SimpleFileLogger = require('simple-node-logger'),
 
 //--------------------------------------------------//
 // Ask the user which search type they want to do
+// and then call the appropriate functions to satisfy
+// that request
 //--------------------------------------------------//
 var inquirer = require("inquirer");
 // Ask the question and prompt for an answer
@@ -280,40 +282,3 @@ inquirer.prompt([{
     });
   }
 });
-
-
-//----------------------------------------------------------//
-// check which task was requested and call the appropriate
-// functions.  If do-what-it-says is requested, then 
-// read the random.txt file to get the request
-//----------------------------------------------------------//  
-// if (appVariables.appRequest === "do-what-it-says") {
-//   // if (process.argv[2] === "do-what-it-says") {
-//   log.log("info", " ");
-//   log.log("info", "do-what-it-says requested");
-//   doWhatItSaysRequest();
-//   log.log("info", " ");
-// } else {
-  // appVariables.appRequest = process.argv[2];
-  // appVariables.appRequestName = process.argv[3];
-  // if (appVariables.appRequest == "my-tweets") {
-  //   log.log("info", " ");
-  //   log.log("info", "my-tweets requested");
-  //   getMyTweets();
-  //   log.log("info", " ");
-  // } else if (appVariables.appRequest === "spotify-this-song") {
-  //   log.log("info", " ");
-  //   log.log("info", "spotify requested");
-  //   getMySong();
-  //   log.log("info", " ");
-    // } else if (appVariables.appRequest === "movie-this") {
-    //   log.log("info", " ");
-    //   log.log("info", "movie-this requested");
-    //   getMyMovie();
-    //   log.log("info", " ");
-//   } else if (appVariables.appRequest !== "do-what-it-says") {
-//     log.log("info", " ");
-//     log.log("info", "unrecognized app requested");
-//     log.log("info", " ");
-//   }
-// }
