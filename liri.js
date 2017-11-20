@@ -16,6 +16,7 @@ appVariables = {
 // there arent 20 tweets out there, retrieve them all
 //----------------------------------------------------------//
 function getMyTweets() {
+  log.log("info", "my-tweets requested");
   var myKeyObj = require("./keys.js");
   var Twitter = require('twitter');
   var client = new Twitter({
@@ -50,6 +51,7 @@ function getMyTweets() {
 // this function retrieves the song entered in on the command line
 //------------------------------------------------------------------//
 function getMySong() {
+  log.log("info", "spotify requested");
   if (appVariables.appRequestName == undefined) {
     getAceOfBaseSong();
   } else {
@@ -124,6 +126,7 @@ function getAceOfBaseSong() {
 // retrieve the info for the movie entered in on the command line
 //------------------------------------------------------------------//
 function getMyMovie() {
+  log.log("info", "movie-this requested");
   var request = require('request');
   if (appVariables.appRequestName == undefined) {
     getMrNobody();
@@ -202,6 +205,7 @@ function getMrNobody() {
 // get the request from the random.txt file, and execute it
 //----------------------------------------------------------------------//
 function doWhatItSaysRequest() {
+  log.log("info", "do-what-it-says requested");
   var fs = require("fs");
   fs.readFile("random.txt", "utf8", function (err, data) {
     if (err) {
@@ -213,13 +217,10 @@ function doWhatItSaysRequest() {
     appVariables.appRequestType = randomRequest[0];
     appVariables.appRequestName = randomRequest[1];
     if (appVariables.appRequestType == "my-tweets") {
-      log.log("info", "my-tweets requested");
       getMyTweets();
     } else if (appVariables.appRequestType === "spotify-this-song") {
-      log.log("info", "spotify requested");
       getMySong();
     } else if (appVariables.appRequestType === "movie-this") {
-      log.log("info", "movie-this requested");
       getMyMovie();
     }
   });
@@ -254,11 +255,9 @@ inquirer.prompt([{
   choices: ["my-tweets", "spotify-this-song", "movie-this", "do-what-it-says"]
 }]).then(function (type) {
   appVariables.appRequestType = type.appType;
-  if (type.appType === "do-what-it-says") {
-    log.log("info", "do-what-it-says requested");
+  if (type.appType === "do-what-it-says") { 
     doWhatItSaysRequest();
-  } else if (type.appType === "my-tweets") {
-    log.log("info", "my-tweets requested");
+  } else if (type.appType === "my-tweets") {   
     getMyTweets();
   } else if (type.appType === "spotify-this-song" || type.appType === "movie-this") {
     if (type.appType === "spotify-this-song") {
@@ -273,10 +272,8 @@ inquirer.prompt([{
     }]).then(function (name) {
       appVariables.appRequestName = name.appName;
       if (appVariables.appRequestType === "spotify-this-song") {
-        log.log("info", "spotify requested");
         getMySong();
       } else if (appVariables.appRequestType === "movie-this") {
-        log.log("info", "movie-this requested");
         getMyMovie();
       }
     });
