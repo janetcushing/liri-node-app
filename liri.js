@@ -259,7 +259,7 @@ inquirer.prompt([{
     log.log("info", "my-tweets requested");
     getMyTweets();
   } else if (type.appType === "spotify-this-song" || type.appType === "movie-this") {
-    if (type.type === "spotify-this-song") {
+    if (type.appType === "spotify-this-song") {
       appVariables.msg = "song"
     } else if (type.appType === "movie-this") {
       appVariables.msg = "movie"
