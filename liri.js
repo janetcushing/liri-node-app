@@ -17,6 +17,7 @@ appVariables = {
 //----------------------------------------------------------//
 function getMyTweets() {
   log.log("info", "my-tweets requested");
+  log.log("info", "Listing recent tweets from " + appVariables.appRequestName);
   var myKeyObj = require("./keys.js");
   var Twitter = require('twitter');
   var client = new Twitter({
@@ -26,7 +27,7 @@ function getMyTweets() {
     access_token_secret: myKeyObj.keyObj.twitterKeys.access_token_secret
   });
   var params = {
-    screen_name: 'cushcushj'
+    screen_name: appVariables.appRequestName
   };
   client.get('statuses/user_timeline', params, function (error, tweets, response) {
     if (!error) {
@@ -255,11 +256,30 @@ inquirer.prompt([{
   choices: ["my-tweets", "spotify-this-song", "movie-this", "do-what-it-says"]
 }]).then(function (type) {
   appVariables.appRequestType = type.appType;
-  if (type.appType === "do-what-it-says") { 
+  if (type.appType === "do-what-it-says") {
     doWhatItSaysRequest();
-  } else if (type.appType === "my-tweets") {   
-    getMyTweets();
-  } else if (type.appType === "spotify-this-song" || type.appType === "movie-this") {
+  } else if (type.appType === "my-tweets") {
+    inquirer.prompt([{
+      type: "list",
+      name: "whosTweets",
+      message: "Do you want to list my tweets (cushcushj) or someone elses??",
+      choices: ["cushcushj", "other tweets"]
+    }]).then(function (whose) {
+      if (whose.whosTweets === "cushcushj") {
+        appVariables.appRequestName = "cushcushj";
+        getMyTweets();
+      } else {
+        inquirer.prompt([{
+          type: "input",
+          name: "screenName",
+          message: "What is the twitter account that you want to search for???"
+        }]).then(function (nme) {
+          appVariables.appRequestName = nme.screenName;
+          getMyTweets();
+        });
+      }
+    });
+   } else if (type.appType === "spotify-this-song" || type.appType === "movie-this") {
     if (type.appType === "spotify-this-song") {
       appVariables.msg = "song"
     } else if (type.appType === "movie-this") {
