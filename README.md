@@ -6,17 +6,23 @@ This application is activated through the command line.  It will write out to th
 
 To activate the application :
 
+
 Download the application code from https://github.com/janetcushing/liri-node-app
 
+
 In the terminal window, navigate to the directory where you have downloaded the liri-node-app code.
+
 
 Type on the command line:
 
 node -v    (this will confirm that you have node installed on your computer.  It will show the version of node that you have.)
+
 npm -v     (this will confirm that you have npm installed on your computer.  It will show the version of npm that you have.)
 
 npm install    (this will install all the node package manager (npm) files that you need to run this app)
+
 node liri.js   ( this will kick off the liri application)
+
 
 
 The application will give you 4 options on the command line.  Use the up and down arrow keys to select the option that you want:  
